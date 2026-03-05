@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jatin Nair — AI Data Strategist</title>
+<title>Jatin Nair — CIPHER. Command Center</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -16,10 +16,10 @@
   --accent3: #a8ff35;
   --gold: #ffc940;
   --text: #e8e8f0;
-  --muted: #6b6b80;
+  --muted: #7a7a92;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; overflow-x:hidden; font-size:16px; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; overflow-x:hidden; font-size:16px; font-weight:400; }
 body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:0; opacity:0.4; }
 
 /* NAV */
@@ -39,11 +39,11 @@ nav { position:sticky; top:0; z-index:100; background:rgba(10,10,15,0.92); backd
 .container { max-width:1100px; margin:0 auto; padding:2.5rem 1.5rem 5rem; }
 
 /* SHARED */
-.section-label { font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+.section-label { font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--accent); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
 .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
 .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.4rem; transition:border-color 0.2s; }
 .card:hover { border-color:rgba(255,92,53,0.25); }
-.card-title { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+.card-title { font-size:0.85rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
 .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
 @media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr;}}
@@ -60,7 +60,7 @@ nav { position:sticky; top:0; z-index:100; background:rgba(10,10,15,0.92); backd
 .goal-banner .target small { display:block; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:500; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-top:0.2rem; }
 .divider-v { width:1px; height:38px; background:var(--border); }
 .goal-text { flex:1; min-width:180px; }
-.goal-text strong { display:block; font-size:1rem; font-weight:600; margin-bottom:0.2rem; }
+.goal-text strong { display:block; font-size:1.05rem; font-weight:700; margin-bottom:0.2rem; }
 .goal-text span { font-size:0.82rem; color:var(--muted); }
 .warning-box { background:rgba(255,92,53,0.06); border:1px solid rgba(255,92,53,0.22); border-left:3px solid var(--accent); border-radius:8px; padding:1rem 1.2rem; margin-bottom:2rem; font-size:0.83rem; line-height:1.6; }
 .warning-box strong { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:0.35rem; }
@@ -73,26 +73,26 @@ nav { position:sticky; top:0; z-index:100; background:rgba(10,10,15,0.92); backd
 .phase-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.25rem; }
 .roadmap-phase.active .phase-label { color:var(--accent); }
 .roadmap-phase.done .phase-label { color:var(--accent3); }
-.phase-title { font-size:1rem; font-weight:700; margin-bottom:0.3rem; }
-.phase-desc { font-size:0.84rem; color:var(--muted); line-height:1.5; }
+.phase-title { font-size:1.02rem; font-weight:700; margin-bottom:0.3rem; }
+.phase-desc { font-size:0.86rem; color:#9090a8; line-height:1.5; }
 .skill-row { margin-bottom:0.9rem; }
 .skill-row-header { display:flex; justify-content:space-between; font-size:0.84rem; margin-bottom:0.3rem; }
-.skill-name { font-weight:600; font-size:0.86rem; }
+.skill-name { font-weight:700; font-size:0.9rem; }
 .skill-pct { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--muted); }
 .bar-track { height:4px; background:var(--surface2); border-radius:100px; overflow:hidden; }
 .bar-fill { height:100%; border-radius:100px; transition:width 1s cubic-bezier(.4,0,.2,1); }
 .checklist { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
-.checklist li { display:flex; align-items:flex-start; gap:0.7rem; font-size:0.9rem; line-height:1.4; cursor:pointer; user-select:none; transition:opacity 0.2s; }
+.checklist li { display:flex; align-items:flex-start; gap:0.7rem; font-size:0.92rem; font-weight:500; line-height:1.4; cursor:pointer; user-select:none; transition:opacity 0.2s; }
 .checklist li.checked { opacity:0.4; text-decoration:line-through; }
 .check-box { width:16px; height:16px; border:1.5px solid var(--border); border-radius:4px; flex-shrink:0; margin-top:1px; display:flex; align-items:center; justify-content:center; transition:all 0.15s; font-size:0.6rem; }
 .checklist li.checked .check-box { background:var(--accent3); border-color:var(--accent3); color:#000; }
 .habit-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.55rem; }
 .habit-item { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.65rem 0.9rem; display:flex; align-items:center; gap:0.6rem; font-size:0.8rem; font-weight:500; cursor:pointer; transition:all 0.15s; }
 .habit-item.done { opacity:0.4; text-decoration:line-through; border-color:var(--accent3); }
-.split-day { display:flex; align-items:center; gap:0.8rem; padding:0.6rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; }
+.split-day { display:flex; align-items:center; gap:0.8rem; padding:0.6rem 0; border-bottom:1px solid var(--border); font-size:0.92rem; font-weight:500; }
 .split-day:last-child { border-bottom:none; }
 .day-name { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--muted); width:34px; flex-shrink:0; }
-.focus { font-weight:600; flex:1; }
+.focus { font-weight:700; flex:1; font-size:0.92rem; }
 .tag { font-size:0.62rem; padding:0.18rem 0.45rem; border-radius:4px; font-family:'JetBrains Mono',monospace; }
 .tag-hyp{background:rgba(255,92,53,0.14);color:var(--accent);}
 .tag-str{background:rgba(53,200,255,0.14);color:var(--accent2);}
@@ -253,7 +253,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .kpi-chip.career.done { background:rgba(53,200,255,0.1); border-color:var(--accent2); }
 .kpi-chip.career.done .kc-label { color:var(--accent2); }
 .kc-icon { font-size:1rem; }
-.kc-label { font-size:0.86rem; font-weight:600; color:var(--muted); transition:color 0.15s; }
+.kc-label { font-size:0.88rem; font-weight:700; color:var(--muted); transition:color 0.15s; }
 .editable-focus { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.75rem 1rem; font-size:0.9rem; color:var(--text); min-height:2.5rem; outline:none; line-height:1.5; transition:border-color 0.15s; }
 .editable-focus:focus { border-color:var(--accent2); }
 
@@ -270,8 +270,8 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .pomo-session-count { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--muted); letter-spacing:0.1em; background:var(--surface2); padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--border); }
 .pomo-right { display:flex; flex-direction:column; gap:0.8rem; }
 .pomo-phase-banner { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.8rem 1rem; }
-.ppb-title { font-size:1rem; font-weight:700; margin-bottom:0.2rem; }
-.ppb-sub { font-size:0.84rem; color:var(--muted); }
+.ppb-title { font-size:1.05rem; font-weight:700; margin-bottom:0.2rem; }
+.ppb-sub { font-size:0.86rem; font-weight:500; color:var(--muted); }
 .pomo-cycle-visual { display:flex; align-items:center; gap:0.3rem; flex-wrap:wrap; }
 .pcv-step { display:flex; flex-direction:column; align-items:center; gap:0.15rem; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid var(--border); background:var(--surface2); font-size:0.65rem; font-family:'JetBrains Mono',monospace; color:var(--muted); transition:all 0.2s; min-width:52px; }
 .pcv-step.active { border-color:var(--accent); background:rgba(255,92,53,0.1); color:var(--accent); }
@@ -294,7 +294,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .task-bucket { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.9rem; }
 .tb-label { font-size:0.78rem; font-weight:700; color:var(--muted); font-family:'JetBrains Mono',monospace; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.6rem; }
 .tb-list { display:flex; flex-direction:column; gap:0.3rem; min-height:30px; margin-bottom:0.6rem; }
-.tb-task { display:flex; align-items:center; gap:0.5rem; font-size:0.88rem; padding:0.35rem 0.5rem; border-radius:6px; cursor:pointer; transition:background 0.1s; user-select:none; }
+.tb-task { display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:500; padding:0.35rem 0.5rem; border-radius:6px; cursor:pointer; transition:background 0.1s; user-select:none; }
 .tb-task:hover { background:rgba(255,255,255,0.04); }
 .tb-task.done { opacity:0.45; text-decoration:line-through; }
 .tb-task .tb-dot { width:14px; height:14px; border-radius:50%; border:1.5px solid var(--border); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:0.55rem; transition:all 0.15s; }
@@ -317,11 +317,11 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .col-body.collapsed { max-height:0; opacity:0; padding-top:0; pointer-events:none; }
 
 /* DAILY RHYTHM */
-.timing-row { display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; }
+.timing-row { display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0; border-bottom:1px solid var(--border); font-size:0.92rem; font-weight:500; }
 .timing-row:last-child { border-bottom:none; }
 .timing-label { color:var(--muted); }
 .timing-time { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--accent2); }
-.med-log-item { display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; }
+.med-log-item { display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0; border-bottom:1px solid var(--border); font-size:0.92rem; font-weight:500; }
 .med-log-item:last-of-type { border-bottom:none; }
 .mli-label { color:var(--text); }
 .mli-check { width:28px; height:28px; border-radius:50%; border:2px solid var(--border); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.9rem; transition:all 0.2s; color:transparent; }
@@ -341,7 +341,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 @media(max-width:600px){ .sacrifice-grid { grid-template-columns:1fr 1fr; } }
 .sacrifice-item { background:var(--surface2); border:1px solid rgba(255,92,53,0.2); border-radius:10px; padding:0.9rem; text-align:center; }
 .sac-icon { font-size:1.5rem; display:block; margin-bottom:0.3rem; }
-.sac-text { font-size:0.88rem; font-weight:700; display:block; color:var(--accent); margin-bottom:0.15rem; }
+.sac-text { font-size:0.92rem; font-weight:700; display:block; color:var(--accent); margin-bottom:0.15rem; }
 .sac-sub { font-size:0.68rem; color:var(--muted); font-family:'JetBrains Mono',monospace; }
 
 /* J CODE PILLARS */
@@ -355,16 +355,16 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .jcode-pillar-card.p4 { background:rgba(255,201,64,0.06); border-color:rgba(255,201,64,0.2); }
 .jcode-pillar-card.p5 { background:rgba(200,100,255,0.06); border-color:rgba(200,100,255,0.2); }
 .jpc-num { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; line-height:1; margin-bottom:0.3rem; color:var(--muted); }
-.jpc-name { font-size:0.88rem; font-weight:700; margin-bottom:0.15rem; }
+.jpc-name { font-size:0.92rem; font-weight:700; margin-bottom:0.15rem; }
 .jpc-sub { font-size:0.68rem; color:var(--muted); font-family:'JetBrains Mono',monospace; margin-bottom:0.5rem; }
-.jpc-rules { font-size:0.76rem; color:var(--muted); line-height:1.6; }
+.jpc-rules { font-size:0.8rem; font-weight:500; color:var(--muted); line-height:1.6; }
 
 /* HABIT TRACKER */
 .habit-tracker-table { border:1px solid var(--border); border-radius:10px; overflow:hidden; }
 .ht-header { display:grid; grid-template-columns:1fr repeat(7,32px) 36px; background:var(--surface2); padding:0.5rem 0.7rem; gap:0.3rem; align-items:center; }
 .ht-row { display:grid; grid-template-columns:1fr repeat(7,32px) 36px; padding:0.45rem 0.7rem; gap:0.3rem; align-items:center; border-top:1px solid var(--border); }
 .ht-row:hover { background:rgba(255,255,255,0.02); }
-.ht-habit-col { font-size:0.84rem; font-weight:500; }
+.ht-habit-col { font-size:0.86rem; font-weight:600; }
 .ht-day { width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--muted); }
 .ht-check { border-radius:5px; border:1.5px solid var(--border); cursor:pointer; transition:all 0.15s; }
 .ht-check:hover { border-color:var(--accent3); }
@@ -400,6 +400,17 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 .col-header .section-label { color:var(--muted); margin-bottom:0; }
 .col-header:hover .section-label { color:var(--text); }
 
+/* LIVE CLOCK */
+.live-clock { font-family:'JetBrains Mono',monospace; font-size:1.6rem; font-weight:600; color:var(--text); letter-spacing:0.05em; opacity:0.9; }
+
+/* CUSTOM CHIP */
+.custom-chip { border-style:dashed !important; }
+.custom-chip-label { outline:none; }
+
+/* WATER PENALTY */
+.water-penalty { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-align:center; margin-top:0.4rem; letter-spacing:0.06em; min-height:1rem; }
+.col-header:hover .section-label { color:var(--text); }
+
 </style>
 </head>
 <body>
@@ -407,7 +418,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 <nav>
   <div class="nav-logo">JN<span>.</span></div>
   <div class="nav-links">
-    <button class="nav-btn active" onclick="showPage('dashboard',this)">Lock-In</button>
+    <button class="nav-btn active" onclick="showPage('dashboard',this)">Cipher</button>
     <button class="nav-btn" onclick="showPage('about',this)">About</button>
     <button class="nav-btn" onclick="showPage('portfolio',this)">Portfolio</button>
   </div>
@@ -420,10 +431,11 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
   <!-- S1: COMMAND HEADER -->
   <div class="dash-header">
     <div class="logo-block">
-      <h1>LOCK<span>.</span>IN</h1>
-      <p>90-Day Command Center · Jatin Nair</p>
+      <h1>CIPHER<span>.</span></h1>
+      <p>Command Center · Jatin Nair</p>
     </div>
     <div class="status-pill">● ACTIVE MISSION</div>
+    <div class="live-clock" id="live-clock">00:00</div>
   </div>
 
   <div class="goal-banner">
@@ -435,7 +447,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     <div class="divider-v"></div>
     <div class="goal-text">
       <strong>AI Data Strategist — E-commerce / Healthcare / Insurance</strong>
-      <span>SQL · Power BI · Excel · Stats · AI Fluency</span>
+      <span>SQL · Power BI · Excel · Stats · Python · AI Fluency</span>
     </div>
   </div>
 
@@ -452,12 +464,12 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     <div class="card">
       <div class="card-title">🏃 Health & Spirit — Today</div>
       <div class="kpi-chips">
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">🥩</span><span class="kc-label">75g Protein</span></div>
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">💧</span><span class="kc-label">3L Water</span></div>
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">😴</span><span class="kc-label">8hr Sleep</span></div>
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">🧘</span><span class="kc-label">2hr Meditation</span></div>
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">🤸</span><span class="kc-label">Stretch</span></div>
-        <div class="kpi-chip" onclick="this.classList.toggle('done')"><span class="kc-icon">🏋️</span><span class="kc-label">Gym Done</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-protein"><span class="kc-icon">🥩</span><span class="kc-label">75g Protein</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-water"><span class="kc-icon">💧</span><span class="kc-label">3L Water</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-sleep"><span class="kc-icon">😴</span><span class="kc-label">8hr Sleep</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-med"><span class="kc-icon">🧘</span><span class="kc-label">2hr Meditation</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-gym"><span class="kc-icon">🤸</span><span class="kc-label">Stretch</span></div>
+        <div class="kpi-chip" onclick="toggleKPI(this)" data-habit="htr-gym"><span class="kc-icon">🏋️</span><span class="kc-label">Gym Done</span></div>
       </div>
     </div>
     <div class="card">
@@ -467,10 +479,9 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
         <div class="editable-focus" id="study-focus" contenteditable="true" spellcheck="false">Click to set today's study goal... (e.g. Complete Stats Module — descriptive stats + probability)</div>
       </div>
       <div class="kpi-chips">
-        <div class="kpi-chip career" onclick="this.classList.toggle('done')"><span class="kc-icon">💼</span><span class="kc-label">LinkedIn Post</span></div>
-        <div class="kpi-chip career" onclick="this.classList.toggle('done')"><span class="kc-icon">🤝</span><span class="kc-label">Networked</span></div>
-        <div class="kpi-chip career" onclick="this.classList.toggle('done')"><span class="kc-icon">📨</span><span class="kc-label">Applied / Scouted</span></div>
-        <div class="kpi-chip career" onclick="this.classList.toggle('done')"><span class="kc-icon">🧠</span><span class="kc-label">Study Block Done</span></div>
+        <div class="kpi-chip career" onclick="toggleKPI(this)" data-habit="htr-linkedin"><span class="kc-icon">💼</span><span class="kc-label">LinkedIn + Job Scouting</span></div>
+        <div class="kpi-chip career" onclick="toggleKPI(this)" data-habit="htr-study"><span class="kc-icon">🧠</span><span class="kc-label">Study Block Done</span></div>
+        <div class="kpi-chip career custom-chip" onclick="toggleKPI(this)" title="Double-click to rename"><span class="kc-icon">✏️</span><span class="kc-label custom-chip-label" ondblclick="editChipLabel(this,event)">Custom Goal</span></div>
       </div>
     </div>
   </div>
@@ -480,8 +491,8 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
   <div class="card" style="margin-bottom:1.5rem">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem">
       <div>
-        <div class="card-title" style="margin-bottom:0.2rem">🔥 Custom Cycle · Work → Active Rest → Work → Active Rest → Work → Deep Rest</div>
-        <div style="font-size:0.75rem;color:var(--muted)">30 min work · 5 min active rest (pushups/pullups/BSS) · 30 min · 5 min · 30 min · 20 min meditation</div>
+        <div class="card-title" style="margin-bottom:0.2rem">🔥 Custom Pomodoro Cycle</div>
+        <div style="font-size:0.82rem;color:var(--muted);font-weight:500">30 min work · 5 min active rest (pushups / pullups / BSS) · 30 min · 5 min · 30 min · 20 min meditation</div>
       </div>
       <div class="pomo-session-count">Session <span id="pomo-session-num">1</span> of 3</div>
     </div>
@@ -550,9 +561,9 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
         <div class="tb-add"><input class="tb-input" id="input-work" placeholder="Add work task..." onkeydown="if(event.key==='Enter')addTask('work')"><button class="tb-btn" onclick="addTask('work')">+</button></div>
       </div>
       <div class="task-bucket">
-        <div class="tb-label">⚡ Verity / Projects</div>
-        <div class="tb-list" id="tasks-verity"></div>
-        <div class="tb-add"><input class="tb-input" id="input-verity" placeholder="Add project task..." onkeydown="if(event.key==='Enter')addTask('verity')"><button class="tb-btn" onclick="addTask('verity')">+</button></div>
+        <div class="tb-label">🙏 Health / Spirituality</div>
+        <div class="tb-list" id="tasks-health"></div>
+        <div class="tb-add"><input class="tb-input" id="input-health" placeholder="Add health/spirit task..." onkeydown="if(event.key==='Enter')addTask('health')"><button class="tb-btn" onclick="addTask('health')">+</button></div>
       </div>
       <div class="task-bucket">
         <div class="tb-label">🌱 Life</div>
@@ -572,13 +583,13 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
       <div class="grid-2" style="margin-bottom:1rem">
         <div class="card">
           <div class="card-title">🕐 Fixed Daily Timings</div>
-          <div class="timing-row"><span class="timing-label">🌅 Wake Up</span><span class="timing-time">6:00 AM</span></div>
-          <div class="timing-row"><span class="timing-label">🥣 Breakfast</span><span class="timing-time">7:00 AM</span></div>
-          <div class="timing-row"><span class="timing-label">🧘 Morning Sit</span><span class="timing-time">6:30 AM · 1 hour</span></div>
-          <div class="timing-row"><span class="timing-label">🍱 Lunch</span><span class="timing-time">1:00 PM</span></div>
-          <div class="timing-row"><span class="timing-label">🍽️ Dinner</span><span class="timing-time">7:30 PM</span></div>
-          <div class="timing-row"><span class="timing-label">📵 Screens Off</span><span class="timing-time">10:00 PM</span></div>
-          <div class="timing-row"><span class="timing-label">😴 Sleep</span><span class="timing-time">10:30 PM</span></div>
+          <div class="timing-row"><span class="timing-label">🌅 Wake Up</span><span class="timing-time">7:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🥣 Breakfast</span><span class="timing-time">9:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🍎 Snack</span><span class="timing-time">11:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🧘 Meditation</span><span class="timing-time">12:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">🍱 Lunch</span><span class="timing-time">2:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">🍽️ Dinner</span><span class="timing-time">7:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">😴 Sleep</span><span class="timing-time">11:30 PM</span></div>
         </div>
         <div class="card">
           <div class="card-title">🧘 Meditation Log — Daily</div>
@@ -620,6 +631,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
           </div>
         </div>
         <div style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.5rem;font-family:'JetBrains Mono',monospace" id="water-status">0 / 3 litres · Keep drinking</div>
+        <div class="water-penalty" id="water-penalty"></div>
         <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--muted);text-align:center">🥄 Reminder: Chew every bite slowly. No rushing meals.</div>
       </div>
     </div>
@@ -634,14 +646,14 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     <div class="col-body" id="body-workout">
       <div class="card" style="margin-bottom:1rem">
         <div class="card-title" style="margin-bottom:0.8rem">📅 Weekly Split · Strength + Hypertrophy Hybrid</div>
-        <div class="split-day"><span class="day-name">MON</span><span class="focus">Chest + Triceps</span><span class="tag tag-hyp">Hyp</span></div>
-        <div class="split-day"><span class="day-name">TUE</span><span class="focus">Legs — Quad + Glute (Priority)</span><span class="tag tag-str">Str</span></div>
-        <div class="split-day"><span class="day-name">WED</span><span class="focus">Lats + Traps (Priority)</span><span class="tag tag-hyp">Hyp</span></div>
-        <div class="split-day"><span class="day-name">THU</span><span class="focus">Legs — Hamstring + Calf (Priority)</span><span class="tag tag-str">Str</span></div>
-        <div class="split-day"><span class="day-name">FRI</span><span class="focus">Lats + Traps — Volume Day</span><span class="tag tag-hyp">Hyp</span></div>
-        <div class="split-day"><span class="day-name">SAT</span><span class="focus">Chest + Shoulders</span><span class="tag tag-hyp">Hyp</span></div>
-        <div class="split-day"><span class="day-name">SUN</span><span class="focus">Physio + Active Rest + Walk</span><span class="tag tag-rest">Rest</span></div>
-        <div style="margin-top:0.9rem;font-size:0.75rem;color:var(--muted);line-height:1.6">Track exact reps/weights in your phone app. This is your plan reminder only. Priority muscle groups: <span style="color:var(--accent3)">Legs (full) · Lats · Traps · Chest</span>. Approach: Compound lifts first (strength), isolation second (hypertrophy).</div>
+        <div class="split-day"><span class="day-name">MON</span><span class="focus">Chest · Triceps · Shoulders</span></div>
+        <div class="split-day"><span class="day-name">TUE</span><span class="focus">Back · Biceps · Forearms</span></div>
+        <div class="split-day"><span class="day-name">WED</span><span class="focus">Legs · Abs</span></div>
+        <div class="split-day"><span class="day-name">THU</span><span class="focus">Chest · Triceps · Shoulders</span></div>
+        <div class="split-day"><span class="day-name">FRI</span><span class="focus">Back · Biceps · Forearms</span></div>
+        <div class="split-day"><span class="day-name">SAT</span><span class="focus">Legs · Abs</span></div>
+        <div class="split-day"><span class="day-name">SUN</span><span class="focus">Rest · Badminton / Table Tennis</span></div>
+        <div style="margin-top:0.9rem;font-size:0.75rem;color:var(--muted);line-height:1.6">Track exact reps/weights in the Heavy app. Priority muscle groups: <span style="color:var(--accent3)">Legs (full) · Lats · Traps · Chest</span>. Approach: Compound lifts first (strength), isolation second (hypertrophy).</div>
       </div>
     </div>
   </div>
@@ -659,7 +671,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
         <div class="sacrifice-item"><span class="sac-icon">📺</span><span class="sac-text">No Binge Watching</span><span class="sac-sub">No YouTube/Series marathons</span></div>
         <div class="sacrifice-item"><span class="sac-icon">🏸</span><span class="sac-text">No Badminton</span><span class="sac-sub">Until the role is landed</span></div>
         <div class="sacrifice-item"><span class="sac-icon">🎉</span><span class="sac-text">No Random Socializing</span><span class="sac-sub">Intentional time only</span></div>
-        <div class="sacrifice-item"><span class="sac-icon">💸</span><span class="sac-text">No Outside Food</span><span class="sac-sub">Save money + gut health</span></div>
+        <div class="sacrifice-item"><span class="sac-icon">🛒</span><span class="sac-text">No Unnecessary Wants</span><span class="sac-sub">Spend only on what matters</span></div>
       </div>
       <div style="text-align:center;margin-top:1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);letter-spacing:0.1em">THESE ARE NOT PUNISHMENTS. THEY ARE INVESTMENTS.</div>
     </div>
@@ -753,9 +765,10 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
   </div>
 
   <div class="mantra">
-    <div class="quote">"The goal is set. The skills exist.<br><span>The only question is whether today you executed.</span>"</div>
+    <div class="quote" id="buddha-quote">Loading...</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);margin-top:0.7rem;letter-spacing:0.1em">— BUDDHA</div>
   </div>
-  <div class="footer-note">Jatin Nair · Lock-In Dashboard · Update every Sunday</div>
+  <div class="footer-note">Jatin Nair · CIPHER Dashboard · Update every Sunday</div>
 </div>
 </div>
 
@@ -1300,10 +1313,10 @@ function pomoTick() {
 
 function pomoNextCycle() {
   clearInterval(pomoState.interval);
+  playBeep();
   pomoState.cycleIdx = (pomoState.cycleIdx + 1) % pomoCycles.length;
   pomoState.timeLeft = pomoCycles[pomoState.cycleIdx].duration;
   pomoState.running = true;
-  // phase complete - flash the timer
   pomoState.interval = setInterval(pomoTick, 1000);
   pomoRender();
 }
@@ -1339,7 +1352,7 @@ function pomoSkip() {
 }
 
 // ===================== TASK LIST =====================
-let tasks = { study:[], work:[], verity:[], life:[] };
+let tasks = { study:[], work:[], health:[], life:[] };
 let taskIdCounter = 0;
 
 function addTask(bucket) {
@@ -1387,6 +1400,7 @@ function updateTaskScore() {
   const pct = total > 0 ? Math.min(100, (done / Math.max(total, 8)) * 100) : 0;
   document.getElementById('task-score-bar').style.width = pct + '%';
   document.getElementById('task-score-bar').style.background = done >= 8 ? 'var(--accent3)' : done >= 5 ? 'var(--gold)' : 'var(--accent)';
+  saveState();
 }
 
 // ===================== WATER BOTTLES =====================
@@ -1396,9 +1410,8 @@ function toggleBottle(el, idx) {
   const fill = document.getElementById('bottle-fill-' + idx);
   fill.style.height = bottlesFilled[idx] ? '100%' : '0%';
   el.classList.toggle('filled', bottlesFilled[idx]);
-  const count = bottlesFilled.filter(Boolean).length;
-  const msgs = ['0 / 3 litres · Keep drinking', '1 / 3 litres · Keep going', '2 / 3 litres · Almost there!', '3 / 3 litres · Goal reached! 🎉'];
-  document.getElementById('water-status').textContent = msgs[count];
+  updateWaterStatus();
+  saveState();
 }
 
 // ===================== MEDITATION LOG =====================
@@ -1419,15 +1432,86 @@ function toggleCollapse(id) {
 }
 
 // ===================== HABIT TRACKER =====================
-function htToggle(el) {
-  el.classList.toggle('checked');
-  // update row score
-  const row = el.closest('.ht-row');
+// ===================== SUPABASE CONFIG =====================
+const SUPABASE_URL = 'https://ibchvprbzzfdhkodyybq.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImliY2h2cHJienpmZGhrb2R5eWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDc1ODMsImV4cCI6MjA4ODI4MzU4M30.tqJlHPwnIxN4FOY9vgmRF-A5pNDuK-d7hXETFTaggWk';
+
+async function supabaseSave(data) {
+  const today = new Date().toISOString().split('T')[0];
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/daily_checkins`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates'
+      },
+      body: JSON.stringify({ date: today, ...data })
+    });
+    if(!res.ok) {
+      const err = await res.text();
+      console.error('Supabase save error:', res.status, err);
+    }
+  } catch(e) { console.log('Supabase save failed, using localStorage fallback', e.message); }
+}
+
+async function supabaseLoad() {
+  const today = new Date().toISOString().split('T')[0];
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/daily_checkins?date=eq.${today}&select=*`, {
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`
+      }
+    });
+    const rows = await res.json();
+    return rows.length > 0 ? rows[0] : null;
+  } catch(e) { return null; }
+}
+
+// ===================== TODAY'S HABIT COLUMN =====================
+function getTodayColIndex() {
+  // Mon=0 ... Sun=6, maps to columns 0-6 in our tracker
+  const day = new Date().getDay(); // 0=Sun,1=Mon...6=Sat
+  return day === 0 ? 6 : day - 1; // convert to Mon-first
+}
+
+function autoCheckHabitRow(rowId, checked) {
+  const row = document.getElementById(rowId);
+  if(!row) return;
+  const colIdx = getTodayColIndex();
   const checks = row.querySelectorAll('.ht-check');
+  if(checks[colIdx]) {
+    if(checked) checks[colIdx].classList.add('checked');
+    else checks[colIdx].classList.remove('checked');
+    htUpdateRowScore(row);
+  }
+}
+
+function htUpdateRowScore(row) {
   const doneCount = row.querySelectorAll('.ht-check.checked').length;
   const pct = Math.round((doneCount / 7) * 100);
-  row.querySelector('.ht-score-val').textContent = pct + '%';
-  row.querySelector('.ht-score-val').style.color = pct >= 80 ? 'var(--accent3)' : pct >= 50 ? 'var(--gold)' : 'var(--accent)';
+  const scoreEl = row.querySelector('.ht-score-val');
+  if(scoreEl) {
+    scoreEl.textContent = pct + '%';
+    scoreEl.style.color = pct >= 80 ? 'var(--accent3)' : pct >= 50 ? 'var(--gold)' : 'var(--accent)';
+  }
+}
+
+// ===================== KPI TOGGLE (links to habit tracker) =====================
+function toggleKPI(chip) {
+  chip.classList.toggle('done');
+  const habitRowId = chip.getAttribute('data-habit');
+  const isDone = chip.classList.contains('done');
+  if(habitRowId) autoCheckHabitRow(habitRowId, isDone);
+  saveState();
+}
+
+function htToggle(el) {
+  el.classList.toggle('checked');
+  const row = el.closest('.ht-row');
+  htUpdateRowScore(row);
 }
 
 function resetWeeklyHabits() {
@@ -1436,10 +1520,18 @@ function resetWeeklyHabits() {
 }
 
 // ===================== INIT =====================
-function initDashboard() {
+async function initDashboard() {
   initJCode();
+  initBuddhaQuote();
   pomoRender();
+  await loadState();
 }
+
+// Auto-save study focus on blur
+document.addEventListener('DOMContentLoaded', () => {
+  const sf = document.getElementById('study-focus');
+  if(sf) sf.addEventListener('blur', saveState);
+});
 
 // ACCORDION
 function toggleInsight(btn) {
@@ -1492,6 +1584,223 @@ window.addEventListener('load', () => {
 });
 
 window.onload = function() { animateBars(); initDashboard(); };
+
+// ===================== LIVE CLOCK =====================
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours().toString().padStart(2,'0');
+  const m = now.getMinutes().toString().padStart(2,'0');
+  const el = document.getElementById('live-clock');
+  if(el) el.textContent = h + ':' + m;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ===================== SOUND TIMER =====================
+function playBeep() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const beepPattern = [0, 150, 300];
+    beepPattern.forEach(delay => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = 880;
+      gain.gain.setValueAtTime(0.4, ctx.currentTime + delay/1000);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + delay/1000 + 0.4);
+      osc.start(ctx.currentTime + delay/1000);
+      osc.stop(ctx.currentTime + delay/1000 + 0.5);
+    });
+  } catch(e) { console.log('Audio not available'); }
+}
+
+// ===================== BUDDHA QUOTES =====================
+const buddhaQuotes = [
+  "The mind is everything. What you think, you become.",
+  "Three things cannot be long hidden: the sun, the moon, and the truth.",
+  "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+  "Peace comes from within. Do not seek it without.",
+  "In the end, only three things matter: how much you loved, how gently you lived, and how gracefully you let go.",
+  "You yourself, as much as anybody in the entire universe, deserve your love and affection.",
+  "Every morning we are born again. What we do today matters most.",
+  "The root of suffering is attachment.",
+  "If you are quiet enough, you will hear the flow of the universe. You will feel its rhythm. Go with this flow.",
+  "Better than a thousand hollow words is one word that brings peace.",
+  "Work out your own salvation. Do not depend on others.",
+  "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+  "Hatred does not cease by hatred, but only by love — this is the eternal rule.",
+  "You will not be punished for your anger; you will be punished by your anger.",
+  "The way is not in the sky. The way is in the heart.",
+];
+function initBuddhaQuote() {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
+  const idx = seed % buddhaQuotes.length;
+  const el = document.getElementById('buddha-quote');
+  if(el) el.innerHTML = '"' + buddhaQuotes[idx] + '"';
+}
+
+// ===================== LOCALSTORAGE PERSISTENCE =====================
+const STORAGE_KEY = 'cipher_dashboard_' + new Date().toDateString();
+
+function saveState() {
+  // Collect KPI chip states
+  const kpiData = {};
+  document.querySelectorAll('.kpi-chip').forEach((chip, i) => {
+    const label = chip.querySelector('.kc-label');
+    if(label) kpiData[i] = { label: label.textContent, done: chip.classList.contains('done') };
+  });
+
+  // Collect habit tracker state (just today's column)
+  const habitData = {};
+  const colIdx = getTodayColIndex();
+  document.querySelectorAll('.ht-row[id]').forEach(row => {
+    const checks = row.querySelectorAll('.ht-check');
+    if(checks[colIdx]) habitData[row.id] = checks[colIdx].classList.contains('checked');
+  });
+
+  const state = {
+    tasks: tasks,
+    taskIdCounter: taskIdCounter,
+    bottles: bottlesFilled,
+    study_focus: document.getElementById('study-focus') ? document.getElementById('study-focus').textContent : '',
+    customChipLabel: document.querySelector('.custom-chip-label') ? document.querySelector('.custom-chip-label').textContent : 'Custom Goal',
+    kpi_data: kpiData,
+    habit_today: habitData,
+  };
+
+  // Save to localStorage as instant fallback
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+
+  // Async save to Supabase
+  supabaseSave({
+    kpi_data: kpiData,
+    tasks: tasks,
+    water: { bottles: bottlesFilled },
+    study_focus: state.study_focus,
+    habit_today: habitData,
+    custom_chip: state.customChipLabel,
+  });
+}
+
+async function loadState() {
+  // Try Supabase first, fall back to localStorage
+  let state = null;
+  const remote = await supabaseLoad();
+  if(remote) {
+    state = {
+      tasks: remote.tasks,
+      bottles: remote.water ? remote.water.bottles : null,
+      study_focus: remote.study_focus,
+      customChipLabel: remote.custom_chip,
+      kpi_data: remote.kpi_data,
+      habit_today: remote.habit_today,
+    };
+  } else {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) state = JSON.parse(raw);
+    } catch(e) {}
+  }
+  if(!state) return;
+
+  // Restore tasks
+  if(state.tasks) {
+    tasks = state.tasks;
+    taskIdCounter = state.taskIdCounter || 0;
+    ['study','work','health','life'].forEach(b => renderTasks(b));
+    updateTaskScore();
+  }
+
+  // Restore water bottles
+  if(state.bottles) {
+    state.bottles.forEach((filled, i) => {
+      if(filled) {
+        bottlesFilled[i] = true;
+        const fill = document.getElementById('bottle-fill-' + i);
+        const bottle = fill ? fill.parentElement : null;
+        if(fill) fill.style.height = '100%';
+        if(bottle) bottle.classList.add('filled');
+      }
+    });
+    updateWaterStatus();
+  }
+
+  // Restore study focus
+  if(state.study_focus) {
+    const sf = document.getElementById('study-focus');
+    if(sf && state.study_focus !== 'Click to set today\'s study goal... (e.g. Complete Stats Module — descriptive stats + probability)') {
+      sf.textContent = state.study_focus;
+    }
+  }
+
+  // Restore custom chip label
+  if(state.customChipLabel && state.customChipLabel !== 'Custom Goal') {
+    const cl = document.querySelector('.custom-chip-label');
+    if(cl) cl.textContent = state.customChipLabel;
+  }
+
+  // Restore KPI chip states
+  if(state.kpi_data) {
+    document.querySelectorAll('.kpi-chip').forEach((chip, i) => {
+      if(state.kpi_data[i] && state.kpi_data[i].done) chip.classList.add('done');
+    });
+  }
+
+  // Restore today's habit tracker column
+  if(state.habit_today) {
+    const colIdx = getTodayColIndex();
+    Object.entries(state.habit_today).forEach(([rowId, checked]) => {
+      const row = document.getElementById(rowId);
+      if(row && checked) {
+        const checks = row.querySelectorAll('.ht-check');
+        if(checks[colIdx]) {
+          checks[colIdx].classList.add('checked');
+          htUpdateRowScore(row);
+        }
+      }
+    });
+  }
+}
+
+// ===================== WATER PENALTY =====================
+function updateWaterStatus() {
+  const count = bottlesFilled.filter(Boolean).length;
+  const msgs = ['0 / 3 litres · Keep drinking', '1 / 3 litres · Keep going', '2 / 3 litres · Almost there!', '3 / 3 litres · Goal reached! 🎉'];
+  const penaltyEl = document.getElementById('water-penalty');
+  const statusEl = document.getElementById('water-status');
+  if(statusEl) statusEl.textContent = msgs[count];
+  if(penaltyEl) {
+    const hour = new Date().getHours();
+    if(count === 0 && hour >= 14) penaltyEl.textContent = '⚠ Past 2PM — No water yet. 10 extra pushups tonight.';
+    else if(count === 1 && hour >= 18) penaltyEl.textContent = '⚠ Only 1L by 6PM. 5 min cold shower tomorrow.';
+    else if(count < 3 && hour >= 21) penaltyEl.textContent = '⚠ Day closing — missed water goal. Log it, own it.';
+    else penaltyEl.textContent = '';
+  }
+}
+
+// ===================== CUSTOM CHIP LABEL EDIT =====================
+function editChipLabel(el, e) {
+  e.stopPropagation();
+  el.contentEditable = 'true';
+  el.focus();
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  el.onblur = () => {
+    el.contentEditable = 'false';
+    saveState();
+  };
+  el.onkeydown = (ev) => { if(ev.key === 'Enter') { ev.preventDefault(); el.blur(); } };
+}
+
+// Wire saveState to task and water changes
+const _origAddTask = addTask;
+// Patch toggleBottle to use updateWaterStatus + save
+
 </script>
 </body>
 </html>
