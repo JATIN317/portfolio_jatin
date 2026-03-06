@@ -473,11 +473,11 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
       <span class="col-chevron" id="chev-rhythm">▼</span>
     </div>
     <div class="col-body" id="body-rhythm">
-      <div class="grid-2" style="margin-bottom:1rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem">
 
-        <!-- LEFT: Timings -->
+        <!-- COL 1: Timings -->
         <div class="card">
-          <div class="card-title">🕐 Fixed Daily Timings</div>
+          <div class="card-title">🕐 Fixed Timings</div>
           <div class="timing-row"><span class="timing-label">🌅 Wake Up</span><span class="timing-time">7:00 AM</span></div>
           <div class="timing-row"><span class="timing-label">🥣 Breakfast</span><span class="timing-time">9:00 AM</span></div>
           <div class="timing-row"><span class="timing-label">🍎 Snack</span><span class="timing-time">11:00 AM</span></div>
@@ -487,13 +487,10 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
           <div class="timing-row"><span class="timing-label">😴 Sleep</span><span class="timing-time">11:30 PM</span></div>
         </div>
 
-        <!-- RIGHT: Water + Meditation -->
-        <div class="card">
-          <div class="card-title">💧 Water + 🧘 Meditation</div>
-
-          <!-- Water -->
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem">Water — 3 Litres</div>
-          <div class="water-bottles" style="justify-content:flex-start;gap:1rem;margin-bottom:0.4rem">
+        <!-- COL 2: Water -->
+        <div class="card" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div class="card-title" style="align-self:flex-start">💧 Water — 3 Litres</div>
+          <div class="water-bottles" style="justify-content:center;gap:1.2rem;margin:1.2rem 0 0.8rem">
             <div class="water-bottle" onclick="toggleBottle(this,0)">
               <div class="bottle-fill" id="bottle-fill-0"></div>
               <div class="bottle-label">1L</div>
@@ -507,20 +504,20 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
               <div class="bottle-label">3L</div>
             </div>
           </div>
-          <div style="font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:0.3rem" id="water-status">0 / 3 litres · Keep drinking</div>
+          <div style="font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace" id="water-status">0 / 3 litres · Keep drinking</div>
           <div class="water-penalty" id="water-penalty"></div>
+          <div style="margin-top:auto;padding-top:1rem;font-size:0.74rem;color:var(--muted);line-height:1.6">🥄 Chew slowly.<br>No rushing meals.</div>
+        </div>
 
-          <!-- Divider -->
-          <div style="border-top:1px solid var(--border);margin:1rem 0"></div>
-
-          <!-- Meditation -->
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem">Meditation Log</div>
+        <!-- COL 3: Meditation -->
+        <div class="card">
+          <div class="card-title">🧘 Meditation Log</div>
           <div class="med-log-item">
             <div class="mli-label">🌅 Morning Sit — 1 Hour</div>
             <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
           </div>
           <div class="mli-divider"></div>
-          <div style="font-size:0.62rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin:0.5rem 0 0.3rem">POMODORO BREAK SITS · 20 MIN EACH</div>
+          <div style="font-size:0.62rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin:0.6rem 0 0.4rem">POMODORO BREAK SITS · 20 MIN EACH</div>
           <div class="med-log-item">
             <div class="mli-label">Break 1 — After 1st cycle</div>
             <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
@@ -533,7 +530,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
             <div class="mli-label">Break 3 — After 3rd cycle</div>
             <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
           </div>
-          <div class="med-total" id="med-total-display" style="margin-top:0.6rem">0 / 2 hrs logged today</div>
+          <div class="med-total" id="med-total-display" style="margin-top:0.8rem">0 / 2 hrs logged today</div>
         </div>
 
       </div>
