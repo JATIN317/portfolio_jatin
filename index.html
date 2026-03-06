@@ -409,6 +409,9 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
 
 /* WATER PENALTY */
 .water-penalty { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-align:center; margin-top:0.4rem; letter-spacing:0.06em; min-height:1rem; }
+
+/* FLOATING WELLNESS PANEL */
+
 .col-header:hover .section-label { color:var(--text); }
 
 </style>
@@ -463,6 +466,80 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
   <!-- WEEKLY SPRINT BANNER — JS driven -->
   <div id="sprint-banner" style="margin-bottom:1.8rem"></div>
 
+  <!-- S1: DAILY RHYTHM -->
+  <div class="collapsible-section" id="col-rhythm">
+    <div class="col-header" onclick="toggleCollapse('rhythm')">
+      <div class="section-label" style="margin-bottom:0;flex:1">🌅 Daily Rhythm</div>
+      <span class="col-chevron" id="chev-rhythm">▼</span>
+    </div>
+    <div class="col-body" id="body-rhythm">
+      <div class="grid-2" style="margin-bottom:1rem">
+
+        <!-- LEFT: Timings -->
+        <div class="card">
+          <div class="card-title">🕐 Fixed Daily Timings</div>
+          <div class="timing-row"><span class="timing-label">🌅 Wake Up</span><span class="timing-time">7:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🥣 Breakfast</span><span class="timing-time">9:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🍎 Snack</span><span class="timing-time">11:00 AM</span></div>
+          <div class="timing-row"><span class="timing-label">🧘 Meditation</span><span class="timing-time">12:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">🍱 Lunch</span><span class="timing-time">2:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">🍽️ Dinner</span><span class="timing-time">7:00 PM</span></div>
+          <div class="timing-row"><span class="timing-label">😴 Sleep</span><span class="timing-time">11:30 PM</span></div>
+        </div>
+
+        <!-- RIGHT: Water + Meditation -->
+        <div class="card">
+          <div class="card-title">💧 Water + 🧘 Meditation</div>
+
+          <!-- Water -->
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem">Water — 3 Litres</div>
+          <div class="water-bottles" style="justify-content:flex-start;gap:1rem;margin-bottom:0.4rem">
+            <div class="water-bottle" onclick="toggleBottle(this,0)">
+              <div class="bottle-fill" id="bottle-fill-0"></div>
+              <div class="bottle-label">1L</div>
+            </div>
+            <div class="water-bottle" onclick="toggleBottle(this,1)">
+              <div class="bottle-fill" id="bottle-fill-1"></div>
+              <div class="bottle-label">2L</div>
+            </div>
+            <div class="water-bottle" onclick="toggleBottle(this,2)">
+              <div class="bottle-fill" id="bottle-fill-2"></div>
+              <div class="bottle-label">3L</div>
+            </div>
+          </div>
+          <div style="font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:0.3rem" id="water-status">0 / 3 litres · Keep drinking</div>
+          <div class="water-penalty" id="water-penalty"></div>
+
+          <!-- Divider -->
+          <div style="border-top:1px solid var(--border);margin:1rem 0"></div>
+
+          <!-- Meditation -->
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem">Meditation Log</div>
+          <div class="med-log-item">
+            <div class="mli-label">🌅 Morning Sit — 1 Hour</div>
+            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
+          </div>
+          <div class="mli-divider"></div>
+          <div style="font-size:0.62rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin:0.5rem 0 0.3rem">POMODORO BREAK SITS · 20 MIN EACH</div>
+          <div class="med-log-item">
+            <div class="mli-label">Break 1 — After 1st cycle</div>
+            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
+          </div>
+          <div class="med-log-item">
+            <div class="mli-label">Break 2 — After 2nd cycle</div>
+            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
+          </div>
+          <div class="med-log-item">
+            <div class="mli-label">Break 3 — After 3rd cycle</div>
+            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
+          </div>
+          <div class="med-total" id="med-total-display" style="margin-top:0.6rem">0 / 2 hrs logged today</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- S2: DAILY KPIs -->
   <div class="section-label">⚡ Daily KPIs</div>
   <div class="grid-2" style="margin-bottom:1rem">
@@ -491,7 +568,42 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     </div>
   </div>
 
-  <!-- S3: POMODORO ENGINE -->
+  <!-- S3: DAILY TASK LIST -->
+  <div class="section-label">📋 Daily Task List</div>
+  <div class="card" style="margin-bottom:1.5rem">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem">
+      <div class="card-title" style="margin-bottom:0">✅ Today's Tasks</div>
+      <div style="display:flex;align-items:center;gap:0.8rem">
+        <div class="task-score-display">Score: <span id="task-score">0</span>/<span id="task-total">0</span> pts</div>
+        <div class="task-score-bar-wrap"><div class="task-score-bar" id="task-score-bar"></div></div>
+        <div style="font-size:0.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace">Target: 8pts</div>
+      </div>
+    </div>
+    <div class="task-buckets">
+      <div class="task-bucket">
+        <div class="tb-label">📚 Study</div>
+        <div class="tb-list" id="tasks-study"></div>
+        <div class="tb-add"><input class="tb-input" id="input-study" placeholder="Add study task..." onkeydown="if(event.key==='Enter')addTask('study')"><button class="tb-btn" onclick="addTask('study')">+</button></div>
+      </div>
+      <div class="task-bucket">
+        <div class="tb-label">💼 Work / Internship</div>
+        <div class="tb-list" id="tasks-work"></div>
+        <div class="tb-add"><input class="tb-input" id="input-work" placeholder="Add work task..." onkeydown="if(event.key==='Enter')addTask('work')"><button class="tb-btn" onclick="addTask('work')">+</button></div>
+      </div>
+      <div class="task-bucket">
+        <div class="tb-label">🙏 Health / Spirituality</div>
+        <div class="tb-list" id="tasks-health"></div>
+        <div class="tb-add"><input class="tb-input" id="input-health" placeholder="Add health/spirit task..." onkeydown="if(event.key==='Enter')addTask('health')"><button class="tb-btn" onclick="addTask('health')">+</button></div>
+      </div>
+      <div class="task-bucket">
+        <div class="tb-label">🌱 Life</div>
+        <div class="tb-list" id="tasks-life"></div>
+        <div class="tb-add"><input class="tb-input" id="input-life" placeholder="Add life task..." onkeydown="if(event.key==='Enter')addTask('life')"><button class="tb-btn" onclick="addTask('life')">+</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: POMODORO ENGINE -->
   <div class="section-label">⏱️ Pomodoro Engine</div>
   <div class="card" style="margin-bottom:1.5rem">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem">
@@ -543,106 +655,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     </div>
   </div>
 
-  <!-- S4: DAILY TASK LIST -->
-  <div class="section-label">📋 Daily Task List</div>
-  <div class="card" style="margin-bottom:1.5rem">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem">
-      <div class="card-title" style="margin-bottom:0">✅ Today's Tasks</div>
-      <div style="display:flex;align-items:center;gap:0.8rem">
-        <div class="task-score-display">Score: <span id="task-score">0</span>/<span id="task-total">0</span> pts</div>
-        <div class="task-score-bar-wrap"><div class="task-score-bar" id="task-score-bar"></div></div>
-        <div style="font-size:0.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace">Target: 8pts</div>
-      </div>
-    </div>
-    <div class="task-buckets">
-      <div class="task-bucket">
-        <div class="tb-label">📚 Study</div>
-        <div class="tb-list" id="tasks-study"></div>
-        <div class="tb-add"><input class="tb-input" id="input-study" placeholder="Add study task..." onkeydown="if(event.key==='Enter')addTask('study')"><button class="tb-btn" onclick="addTask('study')">+</button></div>
-      </div>
-      <div class="task-bucket">
-        <div class="tb-label">💼 Work / Internship</div>
-        <div class="tb-list" id="tasks-work"></div>
-        <div class="tb-add"><input class="tb-input" id="input-work" placeholder="Add work task..." onkeydown="if(event.key==='Enter')addTask('work')"><button class="tb-btn" onclick="addTask('work')">+</button></div>
-      </div>
-      <div class="task-bucket">
-        <div class="tb-label">🙏 Health / Spirituality</div>
-        <div class="tb-list" id="tasks-health"></div>
-        <div class="tb-add"><input class="tb-input" id="input-health" placeholder="Add health/spirit task..." onkeydown="if(event.key==='Enter')addTask('health')"><button class="tb-btn" onclick="addTask('health')">+</button></div>
-      </div>
-      <div class="task-bucket">
-        <div class="tb-label">🌱 Life</div>
-        <div class="tb-list" id="tasks-life"></div>
-        <div class="tb-add"><input class="tb-input" id="input-life" placeholder="Add life task..." onkeydown="if(event.key==='Enter')addTask('life')"><button class="tb-btn" onclick="addTask('life')">+</button></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- S5: DAILY RHYTHM -->
-  <div class="collapsible-section" id="col-rhythm">
-    <div class="col-header" onclick="toggleCollapse('rhythm')">
-      <div class="section-label" style="margin-bottom:0;flex:1">🌅 Daily Rhythm — Sleep · Water · Meals · Meditation</div>
-      <span class="col-chevron" id="chev-rhythm">▼</span>
-    </div>
-    <div class="col-body" id="body-rhythm">
-      <div class="grid-2" style="margin-bottom:1rem">
-        <div class="card">
-          <div class="card-title">🕐 Fixed Daily Timings</div>
-          <div class="timing-row"><span class="timing-label">🌅 Wake Up</span><span class="timing-time">7:00 AM</span></div>
-          <div class="timing-row"><span class="timing-label">🥣 Breakfast</span><span class="timing-time">9:00 AM</span></div>
-          <div class="timing-row"><span class="timing-label">🍎 Snack</span><span class="timing-time">11:00 AM</span></div>
-          <div class="timing-row"><span class="timing-label">🧘 Meditation</span><span class="timing-time">12:00 PM</span></div>
-          <div class="timing-row"><span class="timing-label">🍱 Lunch</span><span class="timing-time">2:00 PM</span></div>
-          <div class="timing-row"><span class="timing-label">🍽️ Dinner</span><span class="timing-time">7:00 PM</span></div>
-          <div class="timing-row"><span class="timing-label">😴 Sleep</span><span class="timing-time">11:30 PM</span></div>
-        </div>
-        <div class="card">
-          <div class="card-title">🧘 Meditation Log — Daily</div>
-          <div class="med-log-item">
-            <div class="mli-label">🌅 Morning Sit — 1 Hour</div>
-            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
-          </div>
-          <div class="mli-divider"></div>
-          <div style="font-size:0.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin:0.6rem 0 0.4rem">POMODORO BREAK SITS · 20 MIN EACH</div>
-          <div class="med-log-item">
-            <div class="mli-label">Break 1 — After 1st cycle</div>
-            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
-          </div>
-          <div class="med-log-item">
-            <div class="mli-label">Break 2 — After 2nd cycle</div>
-            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
-          </div>
-          <div class="med-log-item">
-            <div class="mli-label">Break 3 — After 3rd cycle</div>
-            <div class="mli-check" onclick="this.classList.toggle('done');updateMedTotal()">○</div>
-          </div>
-          <div class="med-total" id="med-total-display">0 / 2 hrs logged today</div>
-        </div>
-      </div>
-      <div class="card" style="margin-bottom:1rem">
-        <div class="card-title">💧 Water Tracker — 3 Litres</div>
-        <div class="water-bottles">
-          <div class="water-bottle" onclick="toggleBottle(this,0)">
-            <div class="bottle-fill" id="bottle-fill-0"></div>
-            <div class="bottle-label">1L</div>
-          </div>
-          <div class="water-bottle" onclick="toggleBottle(this,1)">
-            <div class="bottle-fill" id="bottle-fill-1"></div>
-            <div class="bottle-label">2L</div>
-          </div>
-          <div class="water-bottle" onclick="toggleBottle(this,2)">
-            <div class="bottle-fill" id="bottle-fill-2"></div>
-            <div class="bottle-label">3L</div>
-          </div>
-        </div>
-        <div style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.5rem;font-family:'JetBrains Mono',monospace" id="water-status">0 / 3 litres · Keep drinking</div>
-        <div class="water-penalty" id="water-penalty"></div>
-        <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--muted);text-align:center">🥄 Reminder: Chew every bite slowly. No rushing meals.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- S6: WORKOUT SPLIT -->
+  <!-- S5: WORKOUT SPLIT -->
   <div class="collapsible-section" id="col-workout">
     <div class="col-header" onclick="toggleCollapse('workout')">
       <div class="section-label" style="margin-bottom:0;flex:1">💪 Workout Split — Legs · Lats · Traps · Chest Focus</div>
@@ -663,7 +676,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     </div>
   </div>
 
-  <!-- S7: SACRIFICE LIST -->
+  <!-- S6: SACRIFICE LIST -->
   <div class="collapsible-section" id="col-sacrifice">
     <div class="col-header" onclick="toggleCollapse('sacrifice')">
       <div class="section-label" style="margin-bottom:0;flex:1">🚫 The Sacrifice List — What You Gave Up To Win</div>
@@ -682,7 +695,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     </div>
   </div>
 
-  <!-- S8: J CODE -->
+  <!-- S7: J CODE -->
   <div class="collapsible-section" id="col-jcode">
     <div class="col-header" onclick="toggleCollapse('jcode')">
       <div class="section-label" style="margin-bottom:0;flex:1">📜 The J Code — Your Operating System</div>
@@ -733,7 +746,7 @@ body.edit-mode [contenteditable]:focus { outline:2px solid var(--accent); backgr
     </div>
   </div>
 
-  <!-- S9: WEEKLY HABIT TRACKER -->
+  <!-- S8: WEEKLY HABIT TRACKER -->
   <div class="collapsible-section" id="col-habits">
     <div class="col-header" onclick="toggleCollapse('habits')">
       <div class="section-label" style="margin-bottom:0;flex:1">📊 Weekly Habit Tracker</div>
@@ -1881,7 +1894,6 @@ function editChipLabel(el, e) {
   el.onkeydown = (ev) => { if(ev.key === 'Enter') { ev.preventDefault(); el.blur(); } };
 }
 
-// Wire saveState to task and water changes
 const _origAddTask = addTask;
 // Patch toggleBottle to use updateWaterStatus + save
 
