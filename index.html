@@ -1920,13 +1920,14 @@ async function loadAndRenderSprintBanner() {
   if(!el) return;
   const key = getMondayKey();
 
-  // Try Supabase first
+  // Try Supabase first — overrides hardcoded goals if found
   const rows = await fetchWeeklyGoalsFromDB();
   if(rows && rows.length > 0) {
-    const match = rows.find(r => r.week_start === key);
-    if(match && match.goals_data) {
-      _staticWeeklyGoals[key] = match.goals_data;
-    }
+    rows.forEach(r => {
+      if(r.week_start && r.goals_data) {
+        _staticWeeklyGoals[r.week_start] = r.goals_data;
+      }
+    });
   }
   renderSprintBanner();
 }
@@ -1938,12 +1939,35 @@ function toggleAdminPanel() {
   adminVisible = !adminVisible;
   const panel = document.getElementById('admin-panel');
   if(panel) panel.style.display = adminVisible ? 'flex' : 'none';
-  if(adminVisible) populateAdminWeekDate();
+  if(adminVisible) populateAdminForm();
 }
 
-function populateAdminWeekDate() {
-  const input = document.getElementById('admin-week-start');
-  if(input && !input.value) input.value = getMondayKey();
+function populateAdminForm() {
+  const key = getMondayKey();
+  const weekInput = document.getElementById('admin-week-start');
+  if(weekInput) weekInput.value = key;
+
+  // Try to load existing data for this week
+  const existing = _staticWeeklyGoals[key];
+  if(!existing) return; // nothing saved yet — leave fields blank for fresh entry
+
+  const titleEl = document.getElementById('admin-title');
+  const subtitleEl = document.getElementById('admin-subtitle');
+  const goalsEl = document.getElementById('admin-goals');
+  const spotlightEl = document.getElementById('admin-spotlight');
+
+  if(titleEl) titleEl.value = existing.title || '';
+  if(subtitleEl) subtitleEl.value = existing.subtitle || '';
+
+  if(goalsEl && existing.goals) {
+    goalsEl.value = existing.goals.map(g => `${g.label}: ${g.detail}`).join('\n');
+  }
+
+  if(spotlightEl && existing.spotlight) {
+    spotlightEl.value = existing.spotlight.map(s => `${s.icon} ${s.title}: ${s.sub}`).join('\n');
+  }
+
+  document.getElementById('admin-msg').textContent = '✎ Editing existing week — make changes and save.';
 }
 
 async function adminSaveGoals() {
